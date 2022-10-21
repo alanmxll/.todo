@@ -8,10 +8,11 @@ import { TaskCard } from './components/TaskCard';
 import { TaskListHeader } from './components/TaskListHeader';
 
 import './global.css';
+import { Task } from './interfaces/Task';
 
 export function App() {
-  const [tasks, setTasks] = useState<any>([]);
-  const [newTask, setNewTask] = useState("");
+  const [tasks, setTasks] = useState<Task[]>([]);
+  const [newTaskDescription, setNewTaskDescription] = useState("");
 
   const completedTasks = tasks.filter((task: any) => task.isComplete);
 
@@ -25,26 +26,25 @@ export function App() {
     setTasks([...tasks, newTask]);
   }
 
-  function handleModifyTaskStatus(task: any) {
-
-    const newTaskList = tasks.map((t: any) => {
+  function handleModifyTaskStatus(taskId: number) {
+    const newTaskList = tasks.map((task: Task) => {
       
-      if(t.id === task.id) {
+      if(task.id === taskId) {
         return {
           ...task,
           isComplete: !task.isComplete,
         }
       };
 
-      return t;
+      return task;
     })
 
     setTasks(newTaskList);
   }
 
-  function handleRemoveTask(taskToRemove: any) {
-    const newTaskList = tasks.filter((task: any) => {
-      return task.id !== taskToRemove.id
+  function handleRemoveTask(taskId: number) {
+    const newTaskList = tasks.filter((task: Task) => {
+      return task.id !== taskId
     });
 
     setTasks(newTaskList);
@@ -56,10 +56,10 @@ export function App() {
 
       <div className={styles.form}>
         <Input
-          onChangeTaskDescription={setNewTask}
+          onChangeTaskDescription={setNewTaskDescription}
         />
         <CreateButton
-          description={newTask}
+          description={newTaskDescription}
           createTask={handleCreateNewTask}
         />
       </div>
@@ -76,9 +76,10 @@ export function App() {
         ) :
         (
           <div className={styles.taskList}>
-            {tasks.map((task: any) => {
+            {tasks.map((task: Task) => {
               return (
                 <TaskCard
+                  key={task.id}
                   task={task}
                   changeTaskStatus={handleModifyTaskStatus}
                   removeTask={handleRemoveTask}
