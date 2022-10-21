@@ -6,3 +6,17 @@
   align-items: center;
   gap: 2rem;
 }
+
+.form {
+  display: flex;
+  position: absolute;
+  gap: 0.5rem;
+  top: 10.81rem;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
