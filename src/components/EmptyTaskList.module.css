@@ -1,0 +1,26 @@
+.emptyTaskList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 46rem;
+  height: 15.25rem;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top: 1px solid #333333;
+}
+
+.emptyTaskList img {
+  width: 56px;
+  height: 56px;
+}
+
+.emptyTaskListSpanBold {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.emptyTaskListSpanRegular {
+  font-size: 16px;
+}
