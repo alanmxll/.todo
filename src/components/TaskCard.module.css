@@ -13,16 +13,6 @@
   font-size: 14px;
 }
 
-.checkbox {
-  height: 24px;
-  cursor: pointer;
-  color: var(--blue);
-}
-
-.checkbox:hover {
-  color: var(--blue-dark);
-}
-
 .delete {
   height: 24px;
   cursor: pointer;

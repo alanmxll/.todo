@@ -1,5 +1,6 @@
-import { CheckCircle, Circle, Trash } from 'phosphor-react';
+import { Trash } from 'phosphor-react';
 import { Task } from '../interfaces/Task';
+import { Checkbox } from './Checkbox';
 import styles from './TaskCard.module.css';
 
 interface TaskCardProps {
@@ -14,23 +15,11 @@ export function TaskCard({
   removeTask
 }: TaskCardProps) {
   return (
-    <div className={styles.taskCard} key={task.id}>
-      <div
-        className={styles.checkbox}
-        onClick={() => {
-          changeTaskStatus(task.id);
-        }}
-      >
-        {task.isComplete ? (
-          <CheckCircle
-            size={24}
-            color="var(--purple)"
-            weight="fill"
-          />
-        ) : (
-          <Circle size={24} />
-        )}
-      </div>
+    <div className={styles.taskCard}>
+      <Checkbox
+        task={task}
+        changeTaskStatus={changeTaskStatus}
+      />
 
       <span>{task.description}</span>
 
