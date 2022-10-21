@@ -1,6 +1,7 @@
-import { Trash } from 'phosphor-react';
 import { Task } from '../interfaces/Task';
 import { Checkbox } from './Checkbox';
+import { DeleteButton } from './DeleteButton,';
+import { Description } from './Description';
 import styles from './TaskCard.module.css';
 
 interface TaskCardProps {
@@ -21,16 +22,14 @@ export function TaskCard({
         changeTaskStatus={changeTaskStatus}
       />
 
-      <span>{task.description}</span>
+      <Description
+        task={task}
+      />
 
-      <div
-        className={styles.delete}
-        onClick={() => {
-          removeTask(task.id);
-        }}
-      >
-        <Trash size={18} /> 
-      </div>
+      <DeleteButton
+        taskId={task.id}
+        removeTask={removeTask}
+      />
     </div>
   )
 }

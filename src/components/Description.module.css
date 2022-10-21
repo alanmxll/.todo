@@ -1,0 +1,11 @@
+.description {
+  width: 39.5rem;
+  height: 2.5rem;
+}
+
+.doneDescription {
+  width: 39.5rem;
+  height: 2.5rem;
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
