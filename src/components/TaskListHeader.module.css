@@ -1,0 +1,32 @@
+.headerList {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  width: 46rem;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.createdCounterSpan {
+  display: flex;
+  gap: 0.5rem;
+  color: var(--blue);
+}
+
+.completedCounterSpan {
+  display: flex;
+  gap: 0.5rem;
+  color: var(--purple);
+}
+
+.createdCounter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 8px;
+  background-color: var(--gray-400);
+  color: var(--gray-200);
+  border-radius: 999px;
+  font-size: 12px;
+}
