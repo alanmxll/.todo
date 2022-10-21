@@ -17,8 +17,8 @@ export function Checkbox({ task, changeTaskStatus }: CheckboxProps) {
     >
       {task.isComplete ? (
         <CheckCircle
+          className={styles.checkboxChecked}
           size={24}
-          color="var(--purple)"
           weight="fill"
         />
       ) : (

@@ -4,9 +4,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 100%;
-  outline: none;
   color: var(--blue);
+}
+
+.checkboxChecked {
+  color: var(--purple-dark);
+}
+
+.checkboxChecked:hover {
+  color: var(--purple);
 }
 
 .checkbox:hover {
