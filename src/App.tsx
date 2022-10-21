@@ -6,6 +6,7 @@ import { Header } from './components/Header';
 import { Input } from './components/Input';
 import { TaskCard } from './components/TaskCard';
 import { TaskListHeader } from './components/TaskListHeader';
+import { v4 as uuidV4 } from 'uuid';
 
 import './global.css';
 import { Task } from './interfaces/Task';
@@ -17,8 +18,8 @@ export function App() {
   const completedTasks = tasks.filter((task: any) => task.isComplete);
 
   function handleCreateNewTask(description: string) {
-    const newTask = {
-      id: Math.random(),
+    const newTask: Task = {
+      id: uuidV4(),
       description,
       isComplete: false,
     }
@@ -26,7 +27,7 @@ export function App() {
     setTasks([...tasks, newTask]);
   }
 
-  function handleModifyTaskStatus(taskId: number) {
+  function handleModifyTaskStatus(taskId: string) {
     const newTaskList = tasks.map((task: Task) => {
       
       if(task.id === taskId) {
@@ -42,7 +43,7 @@ export function App() {
     setTasks(newTaskList);
   }
 
-  function handleRemoveTask(taskId: number) {
+  function handleRemoveTask(taskId: string) {
     const newTaskList = tasks.filter((task: Task) => {
       return task.id !== taskId
     });

@@ -5,8 +5,8 @@ import styles from './TaskCard.module.css';
 
 interface TaskCardProps {
   task: Task;
-  changeTaskStatus: (taskId: number) => void;
-  removeTask: (taskId: number) => void;
+  changeTaskStatus: (taskId: string) => void;
+  removeTask: (taskId: string) => void;
 }
 
 export function TaskCard({

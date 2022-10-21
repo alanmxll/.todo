@@ -4,7 +4,7 @@ import styles from './Checkbox.module.css';
 
 interface CheckboxProps {
   task: Task;
-  changeTaskStatus: (taskId: number) => void;
+  changeTaskStatus: (taskId: string) => void;
 }
 
 export function Checkbox({ task, changeTaskStatus }: CheckboxProps) {
